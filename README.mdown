@@ -1,0 +1,29 @@
+Bash.sugar
+==========
+
+A sugar adding sweet [Bash][] support to [Espresso][].
+
+[espresso]: <http://macrabbit.com/espresso/> "Espresso, by MacRabbit"
+[bash]: <http://www.gnu.org/software/bash/> "Bash – GNU Project"
+
+
+Installation
+------------
+
+If you want to follow along from your Sugar directory:
+
+    ESPRESSO_DIR="`osascript -e 'POSIX path of (path to application support from user domain)'`/Espresso"
+    mkdir -p "${ESPRESSO_DIR}/Sugars"
+    git clone git://github.com/mkhl/bash.sugar.git "${ESPRESSO_DIR}/Sugars/Bash.sugar"
+
+Otherwise, just double-click or `open` the directory containing this file
+(which _must_ have a `.sugar` extension) and Espresso will take care of
+installing it for you.
+
+
+License
+-------
+
+This sugar is released under the MIT License. See [`LICENSE`][license] for details.
+
+[license]: http://github.com/mkhl/bash.sugar/raw/master/LICENSE
