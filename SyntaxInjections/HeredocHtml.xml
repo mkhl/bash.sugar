@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<injections>
+    <!--
+        TODO Get the cut-off rule working properly.
+    -->
+    <injection name="injections.bash.cut-off.heredoc-html"
+           selector="embedded.text.html *"
+             action="insert-before-children">
+        <cut-off>(?=^\s*HTML$)</cut-off>
+    </injection>
+    <!--
+        TODO Scope embedded HTML correctly.
+             The `has-child` selector doesn't seem to work...
+    -->
+    <!-- <injection name="injections.bash.embedded.heredoc-html"
+           selector="bash.string.heredoc:has-child(heredoc-token[text == 'HTML'])"
+             action="replace-children"> -->
+    <injection name="injections.bash.embedded.heredoc-html"
+           selector="bash.string.heredoc"
+             action="replace-children">
+        <zone name="embedded.text.html">
+            <starts-with>
+                <expression>(?&lt;=^)</expression>
+            </starts-with>
+            <ends-with>
+                <expression>(?=^\s*HTML$)</expression>
+            </ends-with>
+            <subzones>
+                <include syntax="text.html.basic" />
+            </subzones>
+        </zone>
+    </injection>
+</injections>
