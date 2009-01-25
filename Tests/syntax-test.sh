@@ -28,9 +28,7 @@ ANOTHER
 		removed
 HERE
 
-<<<STRING
-here string
-STRING
+<<<HERESTRING
 
 simple_command
 
