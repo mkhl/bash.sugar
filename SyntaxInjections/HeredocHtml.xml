@@ -6,24 +6,22 @@
     <injection name="injections.bash.cut-off.heredoc-html"
            selector="embedded.text.html *"
              action="insert-before-children">
-        <cut-off>(?=^\s*HTML$)</cut-off>
+        <!-- <cut-off>(?=^\s*HTML$)</cut-off> -->
+        <cut-off>^\s*HTML$</cut-off>
     </injection>
     <!--
         TODO Scope embedded HTML correctly.
              The `has-child` selector doesn't seem to work...
     -->
-    <!-- <injection name="injections.bash.embedded.heredoc-html"
-           selector="bash.string.heredoc:has-child(heredoc-token[text == 'HTML'])"
-             action="replace-children"> -->
     <injection name="injections.bash.embedded.heredoc-html"
-           selector="bash.string.heredoc"
+           selector="bash.string.heredoc:has-child(heredoc-token[text == 'HTML'])"
              action="replace-children">
         <zone name="embedded.text.html">
             <starts-with>
-                <expression>(?&lt;=^)</expression>
+                <expression>^(?!\s*HTML$)</expression>
             </starts-with>
             <ends-with>
-                <expression>(?=^\s*HTML$)</expression>
+                <expression>^(?=\s*HTML$)</expression>
             </ends-with>
             <subzones>
                 <include syntax="text.html.basic" />
