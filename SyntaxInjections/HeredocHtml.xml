@@ -4,7 +4,7 @@
         TODO Get the cut-off rule working properly.
     -->
     <injection name="injections.bash.cut-off.heredoc-html"
-           selector="embedded.text.html *"
+           selector="string.heredoc embedded.text.html *"
              action="insert-before-children">
         <!-- <cut-off>(?=^\s*HTML$)</cut-off> -->
         <cut-off>^\s*HTML$</cut-off>
