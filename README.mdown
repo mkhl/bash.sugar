@@ -1,5 +1,4 @@
-Bash.sugar
-==========
+# Bash.sugar
 
 A sugar adding sweet [Bash][] support to [Espresso][].
 
@@ -7,8 +6,7 @@ A sugar adding sweet [Bash][] support to [Espresso][].
 [bash]: <http://www.gnu.org/software/bash/> "Bash – GNU Project"
 
 
-Installation
-------------
+## Installation
 
 If you want to follow along from your Sugar directory:
 
@@ -21,8 +19,7 @@ Otherwise, just double-click or `open` the directory containing this file
 installing it for you.
 
 
-License
--------
+## License
 
 This sugar is released under the MIT License. See [`LICENSE`][license] for details.
 
