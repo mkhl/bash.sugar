@@ -23,26 +23,26 @@
 
     <library>
         <collection name="case-clause">
-            <zone name="meta.scope.case-clause.bash">
+            <zone name="container.block.case-clause">
                 <starts-with>
                     <expression>(?=\S)</expression>
                 </starts-with>
                 <ends-with>
                     <expression>;;</expression>
-                    <capture number="0" name="punctuation.terminator.case-clause"/>
+                    <capture number="0" name="delimiter.terminator.case-clause"/>
                 </ends-with>
                 <subzones>
-                    <zone name="meta.scope.case-pattern.bash">
+                    <zone name="container.expression.case-pattern">
                         <starts-with>
                             <expression>(\(|(?=\S))</expression>
-                            <capture number="0" name="punctuation.definition.case-pattern.begin"/>
+                            <capture number="0" name="delimiter.definition.case-pattern.begin"/>
                         </starts-with>
                         <ends-with>
                             <expression>\)</expression>
-                            <capture number="0" name="punctuation.definition.case-pattern.end"/>
+                            <capture number="0" name="delimiter.definition.case-pattern.end"/>
                         </ends-with>
                         <subzones>
-                            <zone name="punctuation.separator.pipe-sign">
+                            <zone name="delimiter.separator.case-pattern">
                                 <expression>\|</expression>
                             </zone>
                             <include collection="string"/>
@@ -51,7 +51,7 @@
                             <include collection="pathname"/>
                         </subzones>
                     </zone>
-                    <zone name="meta.scope.case-clause-body.bash">
+                    <zone name="container.block.case-clause-body.bash">
                         <starts-with>
                             <expression>(?&lt;=\))</expression>
                         </starts-with>
@@ -66,75 +66,75 @@
             </zone>
         </collection>
         <collection name="comment">
-            <zone name="comment.line.number-sign.bash">
+            <zone name="metadata.comment.line.number-sign.bash">
                 <expression>(#).*($)\n?</expression>
-                <capture number="1" name="punctuation.definition.comment.begin" />
-                <capture number="2" name="punctuation.definition.comment.end" />
+                <capture number="1" name="delimiter.definition.comment.begin" />
+                <capture number="2" name="delimiter.definition.comment.end" />
             </zone>
         </collection>
         <collection name="compound-command">
-            <zone name="meta.scope.logical-expression.bash">
+            <zone name="container.expression.logical">
                 <starts-with>
                     <expression>(\[{2})</expression>
-                    <capture number="1" name="punctuation.definition.scope.begin"/>
+                    <capture number="1" name="delimiter.balanced.bracket.logical.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>(\]{2})</expression>
-                    <capture number="1" name="punctuation.definition.scope.end"/>
+                    <capture number="1" name="delimiter.balanced.bracket.logical.end"/>
                 </ends-with>
                 <subzones>
                     <include collection="logical-expression"/>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.scope.logical-expression.bash">
+            <zone name="container.expression.logical">
                 <starts-with>
                     <expression>(\[)</expression>
-                    <capture number="1" name="punctuation.definition.scope.begin"/>
+                    <capture number="1" name="delimiter.balanced.bracket.logical.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>(\])</expression>
-                    <capture number="1" name="punctuation.definition.scope.end"/>
+                    <capture number="1" name="delimiter.balanced.bracket.logical.end"/>
                 </ends-with>
                 <subzones>
                     <include collection="logical-expression"/>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="string.other.math.bash">
+            <zone name="container.expression.arithmetical">
                 <starts-with>
                     <expression>(\({2})</expression>
-                    <capture number="1" name="punctuation.definition.string.begin"/>
+                    <capture number="1" name="delimiter.balanced.bracket.arithmetical.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>(\){2})</expression>
-                    <capture number="1" name="punctuation.definition.string.end"/>
+                    <capture number="1" name="delimiter.balanced.bracket.arithmetical.end"/>
                 </ends-with>
                 <subzones>
                     <include collection="math"/>
                 </subzones>
             </zone>
-            <zone name="meta.scope.subshell.bash">
+            <zone name="container.block.subshell">
                 <starts-with>
                     <expression>(\()</expression>
-                    <capture number="1" name="punctuation.definition.scope.begin"/>
+                    <capture number="1" name="delimiter.balanced.bracket.subshell.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>(\))</expression>
-                    <capture number="1" name="punctuation.definition.scope.end"/>
+                    <capture number="1" name="delimiter.balanced.bracket.subshell.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.scope.group.bash">
+            <zone name="container.block.group.bash">
                 <starts-with>
                     <expression>(?&lt;=\s|^)(\{)(?=\s|$)</expression>
-                    <capture number="1" name="punctuation.definition.scope.begin"/>
+                    <capture number="1" name="delimiter.balanced.bracket.group.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>(?&lt;=^|;)\s*(\})</expression>
-                    <capture number="1" name="punctuation.definition.scope.end"/>
+                    <capture number="1" name="delimiter.balanced.bracket.group.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
@@ -142,30 +142,30 @@
             </zone>
         </collection>
         <collection name="function-definition">
-            <zone name="meta.function.bash">
+            <zone name="container.function">
                 <starts-with>
                     <expression>\b(function)\s+((?:[^\s\\]|\\.)+)(?:\s*(\(\)))?</expression>
-                    <capture number="1" name="storage.type.function.bash"/>
-                    <capture number="2" name="entity.name.function.bash"/>
-                    <capture number="3" name="punctuation.definition.arguments"/>
+                    <capture number="1" name="keyword.definition.function"/>
+                    <capture number="2" name="identifier.function"/>
+                    <capture number="3" name="delimiter.balanced.paren.function-arguments"/>
                 </starts-with>
                 <ends-with>
                     <expression>;|&amp;|$</expression>
-                    <capture number="0" name="punctuation.terminator.function"/>
+                    <capture number="0" name="delimiter.terminator.function"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.function.bash">
+            <zone name="container.function">
                 <starts-with>
                     <expression>\b((?:[^\s\\]|\\.)+)\s*(\(\))</expression>
-                    <capture number="1" name="entity.name.function.bash"/>
-                    <capture number="2" name="punctuation.definition.arguments"/>
+                    <capture number="1" name="identifier.function"/>
+                    <capture number="2" name="delimiter.balanced.paren.function-arguments"/>
                 </starts-with>
                 <ends-with>
                     <expression>;|&amp;|$</expression>
-                    <capture number="0" name="punctuation.terminator.function"/>
+                    <capture number="0" name="delimiter.terminator.function"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
@@ -173,26 +173,26 @@
             </zone>
         </collection>
         <collection name="heredoc">
-            <zone name="string.unquoted.heredoc.no-indent.bash">
+            <zone name="container.heredoc.no-indent">
                 <starts-with>
                     <expression>(&lt;&lt;)-("|'|)\\?(\w+)(\2)</expression>
-                    <capture number="1" name="keyword.operator.heredoc.bash"/>
-                    <capture number="2" name="punctuation.definition.token.begin"/>
-                    <capture number="3" name="keyword.control.heredoc-token.bash"/>
-                    <capture number="4" name="punctuation.definition.token.end"/>
+                    <capture number="1" name="operator.heredoc"/>
+                    <capture number="2" name="delimiter.balanced.quote.heredoc-token.begin"/>
+                    <capture number="3" name="keyword.control.heredoc-token"/>
+                    <capture number="4" name="delimiter.balanced.quote.heredoc-token.end"/>
                 </starts-with>
                 <ends-with>
                     <expression>^\t*(\3)$</expression>
-                    <capture number="1" name="keyword.control.heredoc-token.bash"/>
+                    <capture number="1" name="keyword.control.heredoc-token"/>
                 </ends-with>
             </zone>
-            <zone name="string.unquoted.heredoc.bash">
+            <zone name="container.heredoc.regular">
                 <starts-with>
                     <expression>(&lt;&lt;)("|'|)\\?(\w+)(\2)</expression>
-                    <capture number="1" name="keyword.operator.heredoc.bash"/>
-                    <capture number="2" name="punctuation.definition.token.begin"/>
-                    <capture number="3" name="keyword.control.heredoc-token.bash"/>
-                    <capture number="4" name="punctuation.definition.token.end"/>
+                    <capture number="1" name="operator.heredoc"/>
+                    <capture number="2" name="delimiter.balanced.quote.heredoc-token.begin"/>
+                    <capture number="3" name="keyword.control.heredoc-token"/>
+                    <capture number="4" name="delimiter.balanced.quote.heredoc-tokenend"/>
                 </starts-with>
                 <ends-with>
                     <expression>^(\3)$</expression>
@@ -201,64 +201,64 @@
             </zone>
         </collection>
         <collection name="herestring">
-            <zone name="meta.herestring.bash">
+            <zone name="literal.string.herestring">
                 <expression>(&lt;&lt;&lt;)((')[^']*('))</expression>
-                <capture number="1" name="keyword.operator.herestring.bash"/>
-                <capture number="2" name="string.quoted.single.herestring.bash"/>
-                <capture number="3" name="punctuation.definition.string.begin"/>
-                <capture number="4" name="punctuation.definition.string.end"/>
+                <capture number="1" name="operator.herestring"/>
+                <capture number="2" name="literal.string.quoted.single.herestring"/>
+                <capture number="3" name="delimiter.balanced.quote.herestring.begin"/>
+                <capture number="4" name="delimiter.balanced.quote.herestring.end"/>
             </zone>
-            <zone name="meta.herestring.bash">
+            <zone name="literal.string.herestring">
                 <expression>(&lt;&lt;&lt;)((")(?:\\(?:"|\\)|[^"\\])*("))</expression>
-                <capture number="1" name="keyword.operator.herestring.bash"/>
-                <capture number="2" name="string.quoted.double.herestring.bash"/>
-                <capture number="3" name="punctuation.definition.string.begin"/>
-                <capture number="4" name="punctuation.definition.string.end"/>
+                <capture number="1" name="operator.herestring"/>
+                <capture number="2" name="literal.string.quoted.double.herestring"/>
+                <capture number="3" name="delimiter.balanced.quote.herestring.begin"/>
+                <capture number="4" name="delimiter.balanced.quote.herestring.end"/>
             </zone>
             <zone name="meta.herestring.bash">
                 <expression>(&lt;&lt;&lt;)((?:[^\s\\]|\\.)+)</expression>
-                <capture number="1" name="keyword.operator.herestring.bash"/>
-                <capture number="2" name="string.unquoted.herestring.bash"/>
+                <capture number="1" name="operator.herestring"/>
+                <capture number="2" name="literal.string.unquoted.herestring"/>
             </zone>
         </collection>
         <collection name="interpolation">
-            <zone name="string.other.math.bash">
+            <zone name="container.expression.arithmetical">
                 <starts-with>
                     <expression>\$\({2}</expression>
-                    <capture number="0" name="punctuation.definition.string.begin"/>
+                    <capture number="0" name="delimiter.balanced.bracket.arithmetical.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\){2}</expression>
-                    <capture number="0" name="punctuation.definition.string.end"/>
+                    <capture number="0" name="delimiter.balanced.bracket.arithmetical.end"/>
                 </ends-with>
                 <subzones>
                     <include collection="math"/>
                 </subzones>
             </zone>
-            <zone name="string.interpolated.backtick.bash">
+            <zone name="container.expression.interpolation.backtick">
                 <starts-with>
                     <expression>`</expression>
-                    <capture number="0" name="punctuation.definition.string.begin"/>
+                    <capture number="0" name="delimiter.balanced.quote.backtick.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>`</expression>
-                    <capture number="0" name="punctuation.definition.string.end"/>
+                    <capture number="0" name="delimiter.balanced.quote.backtick.end"/>
                 </ends-with>
                 <subzones>
-                    <zone name="constant.character.escape.bash">
+                    <zone name="literal.character.escape">
                         <expression>\\[`\\$]</expression>
                     </zone>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="string.interpolated.dollar.bash">
+            <zone name="container.expression.interpolation.dollar">
                 <starts-with>
                     <expression>\$\(</expression>
-                    <capture number="0" name="punctuation.definition.string.begin"/>
+                    <capture number="0" name="delimiter.balanced.paren.dollar.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\)</expression>
-                    <capture number="0" name="punctuation.definition.string.end"/>
+                    <capture number="0" name="delimiter.balanced.paren.dollar.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
@@ -266,95 +266,95 @@
             </zone>
         </collection>
         <collection name="keyword">
-            <zone name="keyword.control.bash">
+            <zone name="keyword.control">
                 <expression>\b(?:if|then|else|elif|fi|for|in|do|done|select|case|continue|esac|while|until|return)\b</expression>
             </zone>
-            <zone name="storage.modifier.bash">
+            <zone name="keyword.modifier">
                 <expression>\b(?:export|declare|typeset|local|readonly)\b</expression>
             </zone>
         </collection>
         <collection name="list">
-            <zone name="keyword.operator.list.bash">
+            <zone name="operator.list">
                 <expression>;|&amp;&amp;|&amp;|\|\|</expression>
             </zone>
         </collection>
         <collection name="logical-expression">
-            <zone name="keyword.operator.logical.bash">
+            <zone name="operator.logical">
                 <expression>=[=~]?|!=?|&lt;|>|&amp;&amp;|\|\|</expression>
             </zone>
-            <zone name="keyword.operator.logical.bash">
+            <zone name="operator.logical">
                 <expression>-(nt|ot|ef|eq|ne|l[te]|g[te]|[a-hknoprstuwxzOGLSN])</expression>
             </zone>
         </collection>
         <collection name="loop">
-            <zone name="meta.block.for.bash">
+            <zone name="container.block.for">
                 <starts-with>
                     <expression>\b(for)\s+(?=\({2})</expression>
-                    <capture number="1" name="keyword.control.block.open.bash"/>
+                    <capture number="1" name="keyword.control.block.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\b(done)\b</expression>
-                    <capture number="1" name="keyword.control.block.close.bash"/>
+                    <capture number="1" name="keyword.control.block.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.block.for-in.bash">
+            <zone name="container.block.for-in">
                 <starts-with>
                     <expression>\b(for)\s+((?:[^\s\\]|\\.)+)\b</expression>
-                    <capture number="1" name="keyword.control.block.open.bash"/>
-                    <capture number="2" name="variable.loop.bash"/>
+                    <capture number="1" name="keyword.control.block.begin"/>
+                    <capture number="2" name="identifier.variable.loop"/>
                 </starts-with>
                 <ends-with>
                     <expression>\b(done)\b</expression>
-                    <capture number="1" name="keyword.control.block.close.bash"/>
+                    <capture number="1" name="keyword.control.block.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.block.while.bash">
+            <zone name="container.block.while">
                 <starts-with>
                     <expression>\b(while|until)\b</expression>
-                    <capture number="1" name="keyword.control.block.open.bash"/>
+                    <capture number="1" name="keyword.control.block.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\b(done)\b</expression>
-                    <capture number="1" name="keyword.control.block.close.bash"/>
+                    <capture number="1" name="keyword.control.block.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.block.select.bash">
+            <zone name="container.block.select">
                 <starts-with>
                     <expression>\b(select)\s+((?:[^\s\\]|\\.)+)\b</expression>
-                    <capture number="1" name="keyword.control.block.open.bash"/>
-                    <capture number="2" name="variable.loop.bash"/>
+                    <capture number="1" name="keyword.control.block.begin"/>
+                    <capture number="2" name="identifier.variable.loop"/>
                 </starts-with>
                 <ends-with>
                     <expression>\b(done)\b</expression>
-                    <capture number="1" name="keyword.control.block.close.bash"/>
+                    <capture number="1" name="keyword.control.block.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.block.case.bash">
+            <zone name="container.block.case">
                 <starts-with>
                     <expression>\b(case)\b</expression>
-                    <capture number="1" name="keyword.control.block.open.bash"/>
+                    <capture number="1" name="keyword.control.block.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\b(esac)\b</expression>
-                    <capture number="1" name="keyword.control.block.close.bash"/>
+                    <capture number="1" name="keyword.control.block.end"/>
                 </ends-with>
                 <subzones>
-                    <zone name="meta.scope.case-body.bash">
+                    <zone name="container.block.case-body">
                         <starts-with>
                             <expression>\b(in)\b</expression>
-                            <capture number="1" name="keyword.control.block.bash"/>
+                            <capture number="1" name="keyword.control.block"/>
                         </starts-with>
                         <ends-with>
                             <expression>(?=\b(?:esac)\b)</expression>
@@ -368,14 +368,14 @@
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="meta.block.if.bash">
+            <zone name="container.block.if">
                 <starts-with>
                     <expression>\b(if)\b</expression>
-                    <capture number="1" name="keyword.control.block.open.bash"/>
+                    <capture number="1" name="keyword.control.block.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\b(fi)\b</expression>
-                    <capture number="1" name="keyword.control.block.close.bash"/>
+                    <capture number="1" name="keyword.control.block.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
@@ -384,29 +384,29 @@
         </collection>
         <collection name="math">
             <include collection="variable"/>
-            <zone name="keyword.operator.arithmetic.bash">
+            <zone name="operator.arithmetical">
                 <expression>\+{1,2}|-{1,2}|!|~|\*{1,2}|/|%|&lt;[&lt;=]?|>[>=]?|==|!=|^|\|{1,2}|&amp;{1,2}|\?|\:|,|=|[*/%+\-&amp;^|]=|&lt;&lt;=|>>=</expression>
             </zone>
-            <zone name="constant.numeric.hex.bash">
+            <zone name="literal.numeric.integer.hex">
                 <expression>0[xX]\h+</expression>
             </zone>
-            <zone name="constant.numeric.octal.bash">
+            <zone name="literal.numeric.integer.octal">
                 <expression>0\d+</expression>
             </zone>
-            <zone name="constant.numeric.other.bash">
+            <zone name="literal.numeric.integer.other">
                 <expression>\d{1,2}#[0-9a-zA-Z@_]+</expression>
             </zone>
-            <zone name="constant.numeric.integer.bash">
+            <zone name="literal.numeric.integer.decimal">
                 <expression>\d+</expression>
             </zone>
         </collection>
         <collection name="number">
-            <zone name="constant.numeric.bash">
+            <zone name="literal.numeric.integer">
                 <expression>\d+(?=\s|$)</expression>
             </zone>
         </collection>
         <collection name="pathname">
-            <zone name="keyword.operator.tilde.bash">
+            <zone name="operator.path.tilde">
                 <expression>(?&lt;=\s|:|=|^)~</expression>
             </zone>
             <zone name="keyword.operator.glob.bash">
@@ -428,10 +428,10 @@
             </zone>
         </collection>
         <collection name="pipeline">
-            <zone name="keyword.other.bash">
+            <zone name="keyword.control.time">
                 <expression>\b(time)\b</expression>
             </zone>
-            <zone name="keyword.operator.pipe.bash">
+            <zone name="operator.pipe">
                 <expression>[|!]</expression>
             </zone>
         </collection>
@@ -439,114 +439,114 @@
             <zone name="string.interpolated.process-substitution.bash">
                 <starts-with>
                     <expression>[>&lt;]\(</expression>
-                    <capture number="0" name="punctuation.definition.string.begin"/>
+                    <capture number="0" name="delimiter.balanced.bracket.process-substitution.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\)</expression>
-                    <capture number="0" name="punctuation.definition.string.end"/>
+                    <capture number="0" name="delimiter.balanced.bracket.process-substitution.end"/>
                 </ends-with>
                 <subzones>
                     <include syntax="self"/>
                 </subzones>
             </zone>
-            <zone name="keyword.operator.redirect.bash">
+            <zone name="operator.redirect">
                 <expression>&amp;>|\d*>&amp;\d*|\d*(>>|>|&lt;)|\d*&lt;&amp;|\d*&lt;></expression>
             </zone>
         </collection>
         <collection name="string">
-            <zone name="constant.character.escape.bash">
+            <zone name="literal.character.escape">
                 <expression>\\.</expression>
             </zone>
-            <zone name="string.quoted.single.bash">
+            <zone name="literal.string.quoted.single">
                 <starts-with>
                     <expression>'</expression>
-                    <capture number="0" name="punctuation.definition.string.begin"/>
+                    <capture number="0" name="delimiter.balanced.quote.single.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>'</expression>
-                    <capture number="0" name="punctuation.definition.string.end"/>
+                    <capture number="0" name="delimiter.balanced.quote.single.end"/>
                 </ends-with>
             </zone>
-            <zone name="string.quoted.double.bash">
+            <zone name="literal.string.quoted.double">
                 <starts-with>
                     <expression>\$?"</expression>
-                    <capture number="0" name="punctuation.definition.string.begin"/>
+                    <capture number="0" name="delimiter.balanced.quote.double.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>"</expression>
-                    <capture number="0" name="punctuation.definition.string.end"/>
+                    <capture number="0" name="delimiter.balanced.quote.double.end"/>
                 </ends-with>
                 <subzones>
-                    <zone name="constant.character.escape.bash">
+                    <zone name="literal.character.escape">
                         <expression>\\[\$`"\\\n]</expression>
                     </zone>
                     <include collection="variable"/>
                     <include collection="interpolation"/>
                 </subzones>
             </zone>
-            <zone name="string.quoted.single.dollar.bash">
+            <zone name="literal.string.quoted.single.dollar">
                 <starts-with>
                     <expression>\$'</expression>
-                    <capture number="0" name="punctuation.definition.string.begin"/>
+                    <capture number="0" name="delimiter.balanced.quote.single.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>'</expression>
-                    <capture number="0" name="punctuation.definition.string.end"/>
+                    <capture number="0" name="delimiter.balanced.quote.single.end"/>
                 </ends-with>
                 <subzones>
-                    <zone name="constant.character.escape.ansi-c.bash">
+                    <zone name="literal.character.escape.ansi-c">
                         <expression>\\(a|b|e|f|n|r|t|v|\\|')</expression>
                     </zone>
-                    <zone name="constant.character.escape.octal.bash">
+                    <zone name="literal.character.escape.octal">
                         <expression>\\[0-9]{3}</expression>
                     </zone>
-                    <zone name="constant.character.escape.hex.bash">
+                    <zone name="literal.character.escape.hex">
                         <expression>\\x[0-9a-fA-F]{2}</expression>
                     </zone>
-                    <zone name="constant.character.escape.control-char.bash">
+                    <zone name="literal.character.escape.control-char">
                         <expression>\\c.</expression>
                     </zone>
                 </subzones>
             </zone>
         </collection>
         <collection name="support">
-            <zone name="support.function.builtin.bash">
+            <zone name="identifier.function.builtin">
                 <expression>(?&lt;=^|\s)(?::|\.)(?=\s|;|&amp;|$)</expression>
             </zone>
-            <zone name="support.function.builtin.bash">
+            <zone name="identifier.function.builtin">
                 <expression>\b(?:alias|bg|bind|break|builtin|caller|cd|command|compgen|complete|dirs|disown|echo|enable|eval|exec|exit|false|fc|fg|getopts|hash|help|history|jobs|kill|let|logout|popd|printf|pushd|pwd|read|readonly|set|shift|shopt|source|suspend|test|times|trap|true|type|ulimit|umask|unalias|unset|wait)\b</expression>
             </zone>
         </collection>
         <collection name="variable">
-            <zone name="variable.other.special.bash">
+            <zone name="identifier.variable.special">
                 <expression>(\$)[-*@#?$!0_]</expression>
                 <capture number="1" name="punctuation.definition.variable"/>
             </zone>
-            <zone name="variable.other.positional.bash">
+            <zone name="identifier.variable.parameter">
                 <expression>(\$)[1-9]</expression>
                 <capture number="1" name="punctuation.definition.variable"/>
             </zone>
-            <zone name="variable.other.normal.bash">
+            <zone name="identifier.variable.normal">
                 <expression>(\$)[a-zA-Z_][a-zA-Z0-9_]*</expression>
                 <capture number="1" name="punctuation.definition.variable"/>
             </zone>
-            <zone name="variable.other.bracket.bash">
+            <zone name="identifier.variable.bracket">
                 <starts-with>
                     <expression>\$\{</expression>
-                    <capture number="0" name="punctuation.definition.variable.begin"/>
+                    <capture number="0" name="delimiter.balanced.bracket.variable.begin"/>
                 </starts-with>
                 <ends-with>
                     <expression>\}</expression>
-                    <capture number="0" name="punctuation.definition.variable.end"/>
+                    <capture number="0" name="delimiter.balanced.bracket.variable.end"/>
                 </ends-with>
                 <subzones>
-                    <zone name="keyword.operator.expansion.bash">
+                    <zone name="keyword.operator.expansion">
                         <expression>!|:[-=?]?|\*|@|#{1,2}|%{1,2}|/</expression>
                     </zone>
                     <zone>
                         <expression>(\[)([^\]]+)(\])</expression>
-                        <capture number="1" name="punctuation.section.array.bash"/>
-                        <capture number="3" name="punctuation.section.array.bash"/>
+                        <capture number="1" name="delimiter.balanced.bracket.array.begin"/>
+                        <capture number="3" name="delimiter.balanced.bracket.array.end"/>
                     </zone>
                 </subzones>
             </zone>

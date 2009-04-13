@@ -3,11 +3,11 @@
 
     <recipe name="itemizers.bash.comment">
         <class>ESCommentItem</class>
-        <selector>comment</selector>
+        <selector>bash comment</selector>
     </recipe>
 
     <recipe name="itemizers.bash.function">
-        <selector>bash.function:has-child(function.name:capture(name)):capture(itemizer-firstused)</selector>
+        <selector>bash > container.function:has-child(function.identifier:capture(name)):capture(itemizer-firstused)</selector>
         <subrecipes>
             <include-root-recipes/>
         </subrecipes>
@@ -15,8 +15,7 @@
 
     <recipe name="itemizers.bash.block">
         <class>ESCodeBlockItem</class>
-        <start-selector>bash.block.open</start-selector>
-        <end-selector>bash.block.close</end-selector>
+        <selector>bash > container.block:has-child(keyword.block.begin:capture(name))</selector>
         <subrecipes>
             <include-root-recipes/>
         </subrecipes>
