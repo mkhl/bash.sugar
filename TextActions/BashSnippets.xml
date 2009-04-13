@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-recipes>
+    <snippet id="com.github.mkhl.bash.snippets.function" category="tools.Snippets">
+        <title>function</title>
+        <text><![CDATA[function ${1:function_name} () {
+	${0:#statements}
+}
+]]></text>
+        <text-trigger>fun</text-trigger>
+        <syntax-context>bash, bash *</syntax-context>
+    </snippet>
+
+<!--    <snippet id="" category="tools.Snippets">
+        <title></title>
+        <text></text>
+        <text-trigger></text-trigger>
+        <syntax-context></syntax-context>
+    </snippet>-->
+</action-recipes>
