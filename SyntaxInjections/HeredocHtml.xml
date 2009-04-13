@@ -3,7 +3,7 @@
     <!--
         TODO Get the cut-off rule working properly.
     -->
-    <injection name="injections.bash.cut-off.heredoc-html"
+    <injection name="com.github.mkhl.bash.injections.cut-off.heredoc-html"
            selector="string.heredoc embedded.text.html *"
              action="insert-before-children">
         <!-- <cut-off>(?=^\s*HTML$)</cut-off> -->
@@ -13,7 +13,7 @@
         TODO Scope embedded HTML correctly.
              The `has-child` selector doesn't seem to work...
     -->
-    <injection name="injections.bash.embedded.heredoc-html"
+    <injection name="com.github.mkhl.bash.injections.embedded.heredoc-html"
            selector="bash.string.heredoc:has-child(heredoc-token[text == 'HTML'])"
              action="replace-children">
         <zone name="embedded.text.html">
