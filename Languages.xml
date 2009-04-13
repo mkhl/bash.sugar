@@ -23,4 +23,14 @@
 
     </language>
 
+    <meta>
+        <name>Bash</name>
+        <description>A Sugar adding sweet Bash support for Espresso</description>
+        <author>Martin Kühl</author>
+        <identifier>com.github.mkhl.bash</identifier>
+        <url>http://github.com/mkhl/bash.sugar</url>
+        <version status="preview">0</version>
+        <download format="git">git://github.com/mkhl/bash.sugar.git</download>
+    </meta>
+
 </settings>
