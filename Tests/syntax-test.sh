@@ -135,6 +135,7 @@ while [[ condition ]]; do; statements; done
 until [[ condition ]]; do; statements; done
 
 case word in
+    # comment
     pattern)
         do something
         ;;

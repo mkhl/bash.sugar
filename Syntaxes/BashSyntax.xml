@@ -360,6 +360,7 @@
                             <expression>(?=\b(?:esac)\b)</expression>
                         </ends-with>
                         <subzones>
+                            <include collection="comment"/>
                             <include collection="case-clause"/>
                             <include syntax="self"/>
                         </subzones>
