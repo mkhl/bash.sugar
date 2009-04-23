@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <action-recipes>
-    <snippet id="com.github.mkhl.bash.snippets.function" category="tools.Snippets">
+    <snippet id="org.purl.net.bash.snippets.function" category="tools.Snippets">
         <title>function</title>
         <text><![CDATA[function ${1:function_name} () {
 	${0:#statements}
