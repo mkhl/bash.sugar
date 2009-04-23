@@ -19,6 +19,7 @@
             <filename casesensitive="true">.bashrc</filename>
             <filename casesensitive="true">.bash_logout</filename>
             <match-content lines="2">^#!.*[/\s](ba|)sh([/\s]|$)</match-content>
+            <match-content lines="2">^.*(-\*-).*\s(mode:)\s*(shell-script)\s.*(-\*-)\s*$</match-content>
         </detectors>
 
     </language>
