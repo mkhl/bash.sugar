@@ -6,14 +6,14 @@
         <selector>bash comment</selector>
     </recipe>
 
-    <recipe name="org.purl.net.bash.itemizers.function">
+    <recipe name="org.purl.net.mkhl.bash.itemizers.function">
         <selector>bash > container.function:has-child(function.identifier:capture(name)):capture(itemizer-firstused)</selector>
         <subrecipes>
             <include-root-recipes/>
         </subrecipes>
     </recipe>
 
-    <recipe name="org.purl.net.bash.itemizers.block">
+    <recipe name="org.purl.net.mkhl.bash.itemizers.block">
         <class>ESCodeBlockItem</class>
         <selector>bash > container.block:has-child(keyword.block.begin:capture(name))</selector>
         <subrecipes>

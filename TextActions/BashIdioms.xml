@@ -3,7 +3,7 @@
 
     <!-- This *should* work but potentially crashes Espresso… -->
     <!-- Also, FILENAME seems to only be defined for scripts, not snippets… -->
-    <!-- <action id="org.purl.net.bash.idioms.tempfile" category="actions.Text">
+    <!-- <action id="org.purl.net.mkhl.bash.idioms.tempfile" category="actions.Text">
         <class>TEAforEspresso</class>
         <title>tempfile</title>
         <text-trigger>temp</text-trigger>

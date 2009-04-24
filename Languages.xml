@@ -2,7 +2,7 @@
 
 <settings>
 
-    <language id="org.purl.net.bash">
+    <language id="org.purl.net.mkhl.bash">
 
         <name>Bash</name>
 
@@ -28,7 +28,7 @@
         <name>Bash</name>
         <description>A Sugar adding sweet Bash support for Espresso</description>
         <author>Martin Kühl</author>
-        <identifier>org.purl.net.bash</identifier>
+        <identifier>org.purl.net.mkhl.bash</identifier>
         <url>http://github.com/mkhl/bash.sugar</url>
         <version status="preview">0</version>
         <download format="git">git://github.com/mkhl/bash.sugar.git</download>
