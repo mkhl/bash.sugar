@@ -149,7 +149,9 @@ case word in
         do something entirely unrelated
         ;;
     *)
-        do nothing
+        function nested_function () {
+            do nothing
+        }
         ;;
 esac
 
