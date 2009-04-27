@@ -1,0 +1,47 @@
+/*
+	@theme Bash Placeholder
+	@placeholder bash
+*/
+
+bash {
+	spell-check: disabled;
+}
+
+bash delimiter {
+	color: #7f7f7f;
+}
+
+bash comment {
+	color: #bbb;
+}
+
+bash keyword.control, bash keyword.modifier, bash keyword.definition {
+	color: #6700b9;
+}
+
+bash literal.numeric, bash.literal.character {
+	color: #7653c1;
+	background-color: #f3f2ff;
+}
+
+bash string, bash container.heredoc {
+	color: #bc670f;
+	background-color: rgba(251,233,173,0.1);
+}
+
+bash string.interpolated, bash container.expression {
+	background-color: #f5f5f5;
+}
+
+bash operator {
+	color: #626fc9;
+}
+
+bash identifier.function {
+	color: #3a1d72;
+	font-weight: bold;
+}
+
+bash identifier.variable {
+	color: #7b8c4d;
+}
