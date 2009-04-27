@@ -520,15 +520,15 @@
         <collection name="variable">
             <zone name="identifier.variable.special">
                 <expression>(\$)[-*@#?$!0_]</expression>
-                <capture number="1" name="punctuation.definition.variable"/>
+                <capture number="1" name="delimiter.other.definition.variable"/>
             </zone>
             <zone name="identifier.variable.parameter">
                 <expression>(\$)[1-9]</expression>
-                <capture number="1" name="punctuation.definition.variable"/>
+                <capture number="1" name="delimiter.other.definition.variable"/>
             </zone>
             <zone name="identifier.variable.normal">
                 <expression>(\$)[a-zA-Z_][a-zA-Z0-9_]*</expression>
-                <capture number="1" name="punctuation.definition.variable"/>
+                <capture number="1" name="delimiter.other.definition.variable"/>
             </zone>
             <zone name="identifier.variable.bracket">
                 <starts-with>
