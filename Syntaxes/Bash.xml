@@ -357,7 +357,9 @@
                             <capture number="1" name="keyword.control.block"/>
                         </starts-with>
                         <ends-with>
-                            <expression>(?=\b(?:esac)\b)</expression>
+                            <!-- <expression>(?=\b(?:esac)\b)</expression> -->
+                            <!-- Yay, another subtle difference to the TextMate engine. -->
+                            <expression>(?=\s*\b(?:esac)\b)</expression>
                         </ends-with>
                         <subzones>
                             <include collection="comment"/>
