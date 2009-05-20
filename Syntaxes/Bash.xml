@@ -66,7 +66,17 @@
             </zone>
         </collection>
         <collection name="comment">
-            <zone name="metadata.comment.line.number-sign.bash">
+            <zone name="metadata.comment.block.number-sign">
+                <starts-with>
+                    <expression>^(\s*)(#)</expression>
+                    <capture number="2" name="delimiter.definition.comment.begin" />
+                </starts-with>
+                <ends-with>
+                    <expression>^(?:$|(?!\1#))</expression>
+                    <capture number="0" name="delimiter.definition.comment.end" />
+                </ends-with>
+            </zone>
+            <zone name="metadata.comment.line.number-sign">
                 <expression>(#).*($)\n?</expression>
                 <capture number="1" name="delimiter.definition.comment.begin" />
                 <capture number="2" name="delimiter.definition.comment.end" />
