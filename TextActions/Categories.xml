@@ -5,10 +5,10 @@
 		<title>Bash</title>
 	</category>
 	
-	<category id="bash.tools.snippets.meta" show="inline separated"></category>
-	<category id="bash.tools.snippets.func" show="inline separated"></category>
-	<category id="bash.tools.snippets.cond" show="inline separated"></category>
-	<category id="bash.tools.snippets.loop" show="inline separated"></category>
-	<category id="bash.tools.snippets.misc" show="inline separated"></category>
+	<category id="bash.tools.Snippets.meta" show="inline separated"></category>
+	<category id="bash.tools.Snippets.func" show="inline separated"></category>
+	<category id="bash.tools.Snippets.cond" show="inline separated"></category>
+	<category id="bash.tools.Snippets.loop" show="inline separated"></category>
+	<category id="bash.tools.Snippets.misc" show="inline separated"></category>
 
 </action-categories>
