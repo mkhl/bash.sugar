@@ -7,7 +7,7 @@
 		<title>#!…</title>
 		<text><![CDATA[#!/bin/${1:bash}]]></text>
 		<text-trigger>#!</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash > comment</syntax-context>
 	</snippet>
 
 <!--Functions-->
@@ -19,7 +19,7 @@
 }
 ]]></text>
 		<text-trigger>fun</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 <!--Conditionals-->
@@ -30,7 +30,7 @@
 	${0:#statements}
 fi]]></text>
 		<text-trigger>if</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.elif-block"
@@ -39,7 +39,7 @@ fi]]></text>
 		<text><![CDATA[elif ${2:[[ ${1:condition} ]]}; then
 	${0:#statements}]]></text>
 		<text-trigger>elif</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.else-block"
@@ -48,7 +48,7 @@ fi]]></text>
 		<text><![CDATA[else
 	${0:#statements}]]></text>
 		<text-trigger>else</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.case-block"
@@ -59,7 +59,7 @@ fi]]></text>
 		$0;;
 esac]]></text>
 		<text-trigger>case</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 <!--Loops-->
@@ -70,7 +70,7 @@ esac]]></text>
 	${0:#statements}
 done]]></text>
 		<text-trigger>for</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.for-in-loop"
@@ -80,7 +80,7 @@ done]]></text>
 	${0:#statements}
 done]]></text>
 		<text-trigger>forin</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.while-loop"
@@ -90,7 +90,7 @@ done]]></text>
 	${0:#statements}
 done]]></text>
 		<text-trigger>while</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.until-loop"
@@ -100,7 +100,7 @@ done]]></text>
 	${0:#statements}
 done]]></text>
 		<text-trigger>until</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 <!--Misc-->
@@ -111,7 +111,7 @@ done]]></text>
 	$0
 ${1/['"`](.+)['"`]/$1/}]]></text>
 		<text-trigger>&lt;&lt;</text-trigger>
-		<syntax-context>bash, bash *</syntax-context>
+		<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
 	</snippet>
 
 </action-recipes>
