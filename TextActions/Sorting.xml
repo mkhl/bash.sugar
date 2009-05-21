@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sort-instructions>
+
+	<sort-template>
+		<selector>bash.tools.Snippets.meta</selector>
+		<selector>bash.tools.Snippets.func</selector>
+		<selector>bash.tools.Snippets.cond</selector>
+		<selector>bash.tools.Snippets.loop</selector>
+		<selector>bash.tools.Snippets.misc</selector>
+	</sort-template>
+
+</action-sort-instructions>
