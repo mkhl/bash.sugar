@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-categories>
+
+	<category id="actions.text.bash" show="sub">
+		<title>Bash</title>
+	</category>
+	
+	<category id="bash.tools.snippets.meta" show="inline separated"></category>
+	<category id="bash.tools.snippets.func" show="inline separated"></category>
+	<category id="bash.tools.snippets.cond" show="inline separated"></category>
+	<category id="bash.tools.snippets.loop" show="inline separated"></category>
+	<category id="bash.tools.snippets.misc" show="inline separated"></category>
+
+</action-categories>
