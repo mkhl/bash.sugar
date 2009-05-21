@@ -13,7 +13,7 @@
 <!--Functions-->
 	<snippet id="org.purl.net.mkhl.bash.snippets.function"
 	   category="actions.text.bash/bash.tools.snippets.func">
-		<title>function</title>
+		<title>New Function</title>
 		<text><![CDATA[function ${1:function_name} () {
 	${0:#statements}
 }
@@ -25,7 +25,7 @@
 <!--Conditionals-->
 	<snippet id="org.purl.net.mkhl.bash.snippets.if-block"
 	   category="actions.text.bash/bash.tools.snippets.cond">
-		<title>if block</title>
+		<title>if … then</title>
 		<text><![CDATA[if ${2:[[ ${1:condition} ]]}; then
 	${0:#statements}
 fi]]></text>
@@ -35,7 +35,7 @@ fi]]></text>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.elif-block"
 	   category="actions.text.bash/bash.tools.snippets.cond">
-		<title>elif block</title>
+		<title>elif … then</title>
 		<text><![CDATA[elif ${2:[[ ${1:condition} ]]}; then
 	${0:#statements}]]></text>
 		<text-trigger>elif</text-trigger>
@@ -44,7 +44,7 @@ fi]]></text>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.else-block"
 	   category="actions.text.bash/bash.tools.snippets.cond">
-		<title>else block</title>
+		<title>else …</title>
 		<text><![CDATA[else
 	${0:#statements}]]></text>
 		<text-trigger>else</text-trigger>
@@ -53,7 +53,7 @@ fi]]></text>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.case-block"
 	   category="actions.text.bash/bash.tools.snippets.cond">
-		<title>case block</title>
+		<title>case … in</title>
 		<text><![CDATA[case ${1:word} in
 	${2:pattern} )
 		$0;;
@@ -65,7 +65,7 @@ esac]]></text>
 <!--Loops-->
 	<snippet id="org.purl.net.mkhl.bash.snippets.for-loop"
 	   category="actions.text.bash/bash.tools.snippets.loop">
-		<title>for loop</title>
+		<title>for … do</title>
 		<text><![CDATA[for (( i = 0; i < ${1:10}; i++ )); do
 	${0:#statements}
 done]]></text>
@@ -75,7 +75,7 @@ done]]></text>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.for-in-loop"
 	   category="actions.text.bash/bash.tools.snippets.loop">
-		<title>for…in loop</title>
+		<title>for … in … do</title>
 		<text><![CDATA[for ${1:i}${2/.+/ in /}${2:words}; do
 	${0:#statements}
 done]]></text>
@@ -85,7 +85,7 @@ done]]></text>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.while-loop"
 	   category="actions.text.bash/bash.tools.snippets.loop">
-		<title>while loop</title>
+		<title>while … do</title>
 		<text><![CDATA[while ${2:[[ ${1:condition} ]]}; do
 	${0:#statements}
 done]]></text>
@@ -95,7 +95,7 @@ done]]></text>
 
 	<snippet id="org.purl.net.mkhl.bash.snippets.until-loop"
 	   category="actions.text.bash/bash.tools.snippets.loop">
-		<title>until loop</title>
+		<title>until … do</title>
 		<text><![CDATA[until ${2:[[ ${1:condition} ]]}; do
 	${0:#statements}
 done]]></text>
@@ -106,7 +106,7 @@ done]]></text>
 <!--Misc-->
 	<snippet id="org.purl.net.mkhl.bash.snippets.here-doc"
 	   category="actions.text.bash/bash.tools.snippets.misc">
-		<title>here-document</title>
+		<title>Here-Document</title>
 		<text><![CDATA[<<-${2:'${1:TOKEN}'}
 	$0
 ${1/['"`](.+)['"`]/$1/}]]></text>
