@@ -7,7 +7,7 @@
     </recipe>
 
     <recipe name="org.purl.net.mkhl.bash.itemizers.function">
-        <class>ESBaseItem</class>
+        <class>MKFuncItem</class>
         <selector>bash > container.function:has-child(function.identifier:capture(name))</selector>
         <subrecipes>
             <include-root-recipes/>
@@ -15,7 +15,7 @@
     </recipe>
 
     <recipe name="org.purl.net.mkhl.bash.itemizers.block">
-        <class>ESCodeBlockItem</class>
+        <class>MKCodeBlockItem</class>
         <selector>bash > container.block</selector>
         <subrecipes>
             <include-root-recipes/>
