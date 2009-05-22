@@ -8,15 +8,26 @@ A sugar adding sweet [Bash][] support to [Espresso][].
 
 ## Installation
 
-If you want to follow along from your Sugar directory:
+### For Users
 
-    ESPRESSO_DIR="`osascript -e 'POSIX path of (path to application support from user domain)'`/Espresso"
-    mkdir -p "${ESPRESSO_DIR}/Sugars"
-    git clone git://github.com/mkhl/bash.sugar.git "${ESPRESSO_DIR}/Sugars/Bash.sugar"
+In the directory containing this file, run the command
 
-Otherwise, just double-click or `open` the directory containing this file
-(which _must_ have a `.sugar` extension) and Espresso will take care of
-installing it for you.
+	python setup.py py2app
+
+This will build the sugar in the `dist` folder. `Open` it and Espresso will
+take care of installing it in the right place.
+
+### For Developers
+
+In the directory containing this file, run the command
+
+	python setup.py py2app -A
+
+This will build a developer version of the sugar in the `dist` folder. You
+should then install a symlink to it in the Espresso Sugar folder
+(`~/Library/Application Support/Espresso/Sugars`). You can now modify any of
+the files in the source tree and relaunch Espresso to load the modified
+versions.
 
 
 ## License
