@@ -33,7 +33,7 @@ def data_files(dirname = '.'):
 setup(
 	name = 'Bash',
 	version = '0.0',
-	author = 'Martin Kühl',
+	author = u'Martin Kühl',
 	author_email = 'martin.kuehl@gmail.com',
 	url = 'http://github.com/mkhl/bash.sugar',
 	description = 'A Sugar adding sweet Bash support for Espresso',
