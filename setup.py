@@ -42,6 +42,11 @@ setup(
 	options = {
 		'py2app': {
 			'extension': '.sugar',
+			'plist': {
+				'CFBundleVersion': '0.0',
+				'CFBundleIdentifier': 'org.purl.net.mkhl.bash',
+				'NSHumanReadableCopyright': u'(c) 2009 Martin Kühl. Released under the MIT license.',
+			},
 		}
 	}
 )
