@@ -42,7 +42,6 @@ setup(
 	options = {
 		'py2app': {
 			'extension': '.sugar',
-			'semi_standalone': True,
 		}
 	}
 )
