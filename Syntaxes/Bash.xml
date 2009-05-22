@@ -185,7 +185,7 @@
         <collection name="heredoc">
             <zone name="container.heredoc.no-indent">
                 <starts-with>
-                    <expression>(&lt;&lt;)-("|'|)\\?(\w+)(\2)</expression>
+                    <expression>(&lt;&lt;-)("|'|)\\?(\w+)(\2)</expression>
                     <capture number="1" name="operator.heredoc"/>
                     <capture number="2" name="delimiter.balanced.quote.heredoc-token.begin"/>
                     <capture number="3" name="keyword.control.heredoc-token"/>
