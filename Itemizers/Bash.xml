@@ -16,7 +16,7 @@
 
     <recipe name="org.purl.net.mkhl.bash.itemizers.block">
         <class>ESCodeBlockItem</class>
-        <selector>bash > container.block:has-child(keyword.block.begin:capture(name))</selector>
+        <selector>bash > container.block</selector>
         <subrecipes>
             <include-root-recipes/>
         </subrecipes>
