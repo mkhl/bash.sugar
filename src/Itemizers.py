@@ -3,11 +3,11 @@
 
 from Foundation import objc
 
-class MKFuncItem(objc.lookUpClass('ESBaseItem')):
+class BashFuncItem(objc.lookUpClass('ESBaseItem')):
 	"""Itemizer for functions"""
 	pass
 
-class MKCodeBlockItem(objc.lookUpClass('ESCodeBlockItem')):
+class BashCodeBlockItem(objc.lookUpClass('ESCodeBlockItem')):
 	"""Itemizer for code blocks"""
 	
 	def isTextualizer(self):
