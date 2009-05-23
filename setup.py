@@ -3,15 +3,13 @@
 
 from distutils.core import setup
 import py2app
-import os
+import os, glob
 
 def data_files(dirname = '.'):
 	"""Figure out the sugar structure and massage it into data_files format."""
 	def data_file(name):
 		return (os.path.join('..', '..', name),
-		        [os.path.join(dirname, name, file)
-		         for file in os.listdir(os.path.join(dirname, name))
-		         if not file.startswith('.')])
+		        glob.glob(os.path.join(dirname, name, '*')))
 	
 	base = ['LICENSE', 'README.mdown', 'Languages.xml']
 	result = [(os.path.join('..', '..'), base)]
