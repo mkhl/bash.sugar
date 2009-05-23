@@ -44,7 +44,8 @@ setup(
 	options = dict(
 		py2app = dict(
 			extension = '.sugar',
-			# semi_standalone = True,
+			semi_standalone = True,
+			site_packages = True,
 			plist = dict(
 				CFBundleVersion = '0.0',
 				CFBundleIdentifier = 'org.purl.net.mkhl.bash',
