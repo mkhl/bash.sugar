@@ -7,9 +7,9 @@ import os, glob
 
 def data_files(dirname = '.'):
 	"""Figure out the sugar structure and massage it into data_files format."""
-	def data_file(name):
-		return (os.path.join('..', '..', name),
-		        glob.glob(os.path.join(dirname, name, '*')))
+	def data_file(component):
+		return (os.path.join('..', '..', component),
+		        glob.glob(os.path.join(dirname, component, '*')))
 	
 	base = ['LICENSE', 'README.mdown', 'Languages.xml']
 	result = [(os.path.join('..', '..'), base)]
@@ -24,8 +24,8 @@ def data_files(dirname = '.'):
 		'SyntaxInjections',
 		'TextActions',
 	])
-	for name in dirs.intersection(set(os.listdir(dirname))):
-		result.append(data_file(name))
+	for subdir in dirs.intersection(set(os.listdir(dirname))):
+		result.append(data_file(subdir))
 	return result
 
 setup(
