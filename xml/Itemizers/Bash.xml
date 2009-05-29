@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <itemizer>
-
 	<recipe name="org.purl.net.mkhl.bash.itemizers.comment">
 		<class>ESCommentItem</class>
 		<selector>bash > comment</selector>
 	</recipe>
-
 	<recipe name="org.purl.net.mkhl.bash.itemizers.function">
 		<class>BashFuncItem</class>
 		<selector>bash > container.function:has-child(function.identifier:capture(name))</selector>
@@ -14,7 +11,6 @@
 			<include-root-recipes/>
 		</subrecipes>
 	</recipe>
-
 	<recipe name="org.purl.net.mkhl.bash.itemizers.block">
 		<class>BashCodeBlockItem</class>
 		<selector>bash > container.block</selector>
@@ -22,5 +18,4 @@
 			<include-root-recipes/>
 		</subrecipes>
 	</recipe>
-
 </itemizer>

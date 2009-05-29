@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <settings>
-
-    <language id="org.purl.net.mkhl.bash">
-
-        <name>Bash</name>
-
-        <root-zone>sourcecode.bash</root-zone>
-
-        <detectors>
-            <extension>sh</extension>
-            <extension>bash</extension>
-            <filename casesensitive="true">profile</filename>
-            <filename casesensitive="true">bashrc</filename>
-            <filename casesensitive="true">.bash_profile</filename>
-            <filename casesensitive="true">.bash_login</filename>
-            <filename casesensitive="true">.profile</filename>
-            <filename casesensitive="true">.bashrc</filename>
-            <filename casesensitive="true">.bash_logout</filename>
-            <match-content lines="2">^#!.*[/\s](ba|)sh([/\s]|$)</match-content>
-            <match-content lines="2">^.*(-\*-).*\s(mode:)\s*(shell-script)\s.*(-\*-)\s*$</match-content>
-        </detectors>
-
-    </language>
-
-    <meta>
-        <name>Bash</name>
-        <description>A Sugar adding sweet Bash support for Espresso</description>
-        <author>Martin Kühl</author>
-        <identifier>org.purl.net.mkhl.bash</identifier>
-        <url>http://github.com/mkhl/bash.sugar</url>
-        <version status="preview">0</version>
-        <download format="git">git://github.com/mkhl/bash.sugar.git</download>
-    </meta>
-
+	<language id="org.purl.net.mkhl.bash">
+		<name>Bash</name>
+		<root-zone>sourcecode.bash</root-zone>
+		<detectors>
+			<extension>sh</extension>
+			<extension>bash</extension>
+			<filename casesensitive="true">profile</filename>
+			<filename casesensitive="true">bashrc</filename>
+			<filename casesensitive="true">.bash_profile</filename>
+			<filename casesensitive="true">.bash_login</filename>
+			<filename casesensitive="true">.profile</filename>
+			<filename casesensitive="true">.bashrc</filename>
+			<filename casesensitive="true">.bash_logout</filename>
+			<match-content lines="2">^#!.*[/\s](ba|)sh([/\s]|$)</match-content>
+			<match-content lines="2">^.*(-\*-).*\s(mode:)\s*(shell-script)\s.*(-\*-)\s*$</match-content>
+		</detectors>
+	</language>
+	<meta>
+		<name>Bash</name>
+		<description>A Sugar adding sweet Bash support for Espresso</description>
+		<author>Martin Kühl</author>
+		<identifier>org.purl.net.mkhl.bash</identifier>
+		<url>http://github.com/mkhl/bash.sugar</url>
+		<version status="preview">0</version>
+		<download format="git">git://github.com/mkhl/bash.sugar.git</download>
+	</meta>
 </settings>
