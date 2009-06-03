@@ -1,204 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <action-recipes>
 <!--Metadata-->
-	<action id="org.purl.net.mkhl.bash.snippets.shebang"
-	  category="hidden">
-		<title>#!…</title>
-		<text-trigger>#!</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[#!/bin/${1:bash}]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash > comment</syntax-context>
-		</setup>
-	</action>
+    <action id="org.purl.net.mkhl.bash.snippets.shebang" category="hidden">
+        <title>#!…</title>
+        <text-trigger>#!</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[#!/bin/${1:bash}]]></string>
+                </dict>
+            </options>
+            <syntax-context>bash, bash > comment</syntax-context>
+        </setup>
+    </action>
 <!--Functions-->
-	<action id="org.purl.net.mkhl.bash.snippets.function"
-	  category="actions.text.bash/bash.tools.Snippets.func">
-		<title>New Function</title>
-		<text-trigger>fun</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[function ${1:function_name} () {
+    <action id="org.purl.net.mkhl.bash.snippets.function" category="actions.text.bash/bash.tools.Snippets.func">
+        <title>New Function</title>
+        <text-trigger>fun</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[function ${1:function_name} () {
 	${0:#statements}
-}
-]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
+}]]></string>
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
 <!--Conditionals-->
-	<action id="org.purl.net.mkhl.bash.snippets.if-block"
-	  category="actions.text.bash/bash.tools.Snippets.cond">
-		<title>if … then</title>
-		<text-trigger>if</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[if ${2:[[ ${1:condition} ]]}; then
+    <action id="org.purl.net.mkhl.bash.snippets.if-block" category="actions.text.bash/bash.tools.Snippets.cond">
+        <title>if … then</title>
+        <text-trigger>if</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[if ${2:[[ ${1:condition} ]]}; then
 	${0:#statements}
 fi]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
-	<action id="org.purl.net.mkhl.bash.snippets.elif-block"
-	  category="actions.text.bash/bash.tools.Snippets.cond">
-		<title>elif … then</title>
-		<text-trigger>elif</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[elif ${2:[[ ${1:condition} ]]}; then
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
+    <action id="org.purl.net.mkhl.bash.snippets.elif-block" category="actions.text.bash/bash.tools.Snippets.cond">
+        <title>elif … then</title>
+        <text-trigger>elif</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[elif ${2:[[ ${1:condition} ]]}; then
 	${0:#statements}]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
-	<action id="org.purl.net.mkhl.bash.snippets.else-block"
-	  category="actions.text.bash/bash.tools.Snippets.cond">
-		<title>else …</title>
-		<text-trigger>else</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[else
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
+    <action id="org.purl.net.mkhl.bash.snippets.else-block" category="actions.text.bash/bash.tools.Snippets.cond">
+        <title>else …</title>
+        <text-trigger>else</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[else
 	${0:#statements}]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
-	<action id="org.purl.net.mkhl.bash.snippets.case-block"
-	  category="actions.text.bash/bash.tools.Snippets.cond">
-		<title>case … in</title>
-		<text-trigger>case</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[case ${1:word} in
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
+    <action id="org.purl.net.mkhl.bash.snippets.case-block" category="actions.text.bash/bash.tools.Snippets.cond">
+        <title>case … in</title>
+        <text-trigger>case</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[case ${1:word} in
 	${2:pattern} )
 		$0;;
 esac]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
 <!--Loops-->
-	<action id="org.purl.net.mkhl.bash.snippets.for-loop"
-	  category="actions.text.bash/bash.tools.Snippets.loop">
-		<title>for … do</title>
-		<text-trigger>for</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[for (( i = 0; i < ${1:10}; i++ )); do
+    <action id="org.purl.net.mkhl.bash.snippets.for-loop" category="actions.text.bash/bash.tools.Snippets.loop">
+        <title>for … do</title>
+        <text-trigger>for</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[for (( i = 0; i < ${1:10}; i++ )); do
 	${0:#statements}
 done]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
-	<action id="org.purl.net.mkhl.bash.snippets.for-in-loop"
-	  category="actions.text.bash/bash.tools.Snippets.loop">
-		<title>for … in … do</title>
-		<text-trigger>forin</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[for ${1:i}${2/.+/ in /}${2:words}; do
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
+    <action id="org.purl.net.mkhl.bash.snippets.for-in-loop" category="actions.text.bash/bash.tools.Snippets.loop">
+        <title>for … in … do</title>
+        <text-trigger>forin</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[for ${1:i}${2/.+/ in /}${2:words}; do
 	${0:#statements}
 done]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
-	<action id="org.purl.net.mkhl.bash.snippets.while-loop"
-	  category="actions.text.bash/bash.tools.Snippets.loop">
-		<title>while … do</title>
-		<text-trigger>while</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[while ${2:[[ ${1:condition} ]]}; do
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
+    <action id="org.purl.net.mkhl.bash.snippets.while-loop" category="actions.text.bash/bash.tools.Snippets.loop">
+        <title>while … do</title>
+        <text-trigger>while</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[while ${2:[[ ${1:condition} ]]}; do
 	${0:#statements}
 done]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
-	<action id="org.purl.net.mkhl.bash.snippets.until-loop"
-	  category="actions.text.bash/bash.tools.Snippets.loop">
-		<title>until … do</title>
-		<text-trigger>until</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[until ${2:[[ ${1:condition} ]]}; do
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
+    <action id="org.purl.net.mkhl.bash.snippets.until-loop" category="actions.text.bash/bash.tools.Snippets.loop">
+        <title>until … do</title>
+        <text-trigger>until</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[until ${2:[[ ${1:condition} ]]}; do
 	${0:#statements}
 done]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
 <!--Misc-->
-	<action id="org.purl.net.mkhl.bash.snippets.here-doc"
-	  category="actions.text.bash/bash.tools.Snippets.misc">
-		<title>Here-Document</title>
-		<text-trigger>&lt;&lt;</text-trigger>
-		<class>TEAforEspresso</class>
-		<setup>
-			<action>insert_snippet</action>
-			<options>
-				<dict>
-					<key>default</key>
-					<string><![CDATA[<<-${2:'${1:TOKEN}'}
+    <action id="org.purl.net.mkhl.bash.snippets.here-doc" category="actions.text.bash/bash.tools.Snippets.misc">
+        <title>Here-Document</title>
+        <text-trigger>&lt;&lt;</text-trigger>
+        <class>TEAforEspresso</class>
+        <setup>
+            <action>insert_snippet</action>
+            <options>
+                <dict>
+                    <key>default</key>
+                    <string><![CDATA[<<-${2:'${1:TOKEN}'}
 	$0
 ${1/['"`](.+)['"`]/$1/}]]></string>
-				</dict>
-			</options>
-			<syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
-		</setup>
-	</action>
+                </dict>
+            </options>
+            <syntax-context>bash, bash *:not(comment, string, heredoc, variable, container.expression)</syntax-context>
+        </setup>
+    </action>
 </action-recipes>
