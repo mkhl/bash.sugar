@@ -2,9 +2,12 @@
 
 A sugar adding sweet [Bash][] support to [Espresso][].
 
+Since I am not actively using Espresso I am now maintaining this sugar
+at this time either. Please consider giving [Emil's fork][tixz] a try.
+
 [espresso]: <http://macrabbit.com/espresso/> "Espresso, by MacRabbit"
 [bash]: <http://www.gnu.org/software/bash/> "Bash – GNU Project"
-
+[tixz]: https://github.com/tixz/bash.sugar/
 
 ## Installation
 
